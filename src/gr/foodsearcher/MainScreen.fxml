@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gr.foodsearcher.MainScreenController">
+   <left>
+      <AnchorPane prefHeight="360.0" prefWidth="154.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="6.0" layoutY="25.0" text="Οδός" />
+            <TextField fx:id="streetNameField" layoutX="5.0" layoutY="42.0" onKeyPressed="#onTextChanged" prefHeight="27.0" prefWidth="142.0" promptText="Πχ. Λεωφ. Κηφισίας" />
+             <Label layoutX="6.0" layoutY="91.0" text="Αριθμός" />
+             <Label layoutX="76.0" layoutY="91.0" text="Τ.Κ." />
+             <TextField fx:id="streetNumberField" alignment="CENTER" layoutX="8.0" layoutY="115.0" onKeyPressed="#onTextChanged" prefHeight="27.0" prefWidth="45.0" promptText="0" />
+             <TextField fx:id="postalCodeField" alignment="CENTER" layoutX="79.0" layoutY="115.0" onKeyPressed="#onTextChanged" prefHeight="27.0" prefWidth="57.0" text="14578" />
+             <Label layoutX="6.0" layoutY="158.0" text="Περιοχή" />
+            <TextField fx:id="areaField" layoutX="8.0" layoutY="175.0" onKeyPressed="#onTextChanged" prefHeight="27.0" prefWidth="142.0" promptText="Πχ. Μαρούσι" />
+            <Label layoutX="6.0" layoutY="215.0" text="Πόλη" />
+            <TextField fx:id="cityField" layoutX="8.0" layoutY="232.0" onKeyPressed="#onTextChanged" prefHeight="27.0" prefWidth="142.0" promptText="Πχ. Αθήνα" />
+            <Button layoutX="101.0" layoutY="298.0" mnemonicParsing="false" onMouseClicked="#saveButtonClicked" text="Save" />
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+       <TableView fx:id="resultsTable" prefHeight="360.0" prefWidth="635.0">
+           <columns>
+               <TableColumn fx:id="foodColumn" prefWidth="142.0" text="Food" />
+               <TableColumn fx:id="foodDescription" prefWidth="237.0" text="Description" />
+               <TableColumn fx:id="foodPrice" prefWidth="109.0" text="Price" />
+               <TableColumn fx:id="restaurantName" prefWidth="146.0" text="Restaurant" />
+           </columns>
+       </TableView>
+   </right>
+   <top>
+      <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+          <Button mnemonicParsing="false" onMouseClicked="#searchButtonClicked" text="Search" />
+            <TextField fx:id="searchField" alignment="CENTER" onKeyPressed="#onKeyPressedSearch" prefHeight="27.0" prefWidth="214.0" promptText="Αναζήτηση φαγητού" stylesheets="@prompt-text-align.css" />
+        </items>
+      </ToolBar>
+   </top>
+</BorderPane>

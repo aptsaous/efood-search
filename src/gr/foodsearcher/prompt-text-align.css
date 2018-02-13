@@ -1,0 +1,6 @@
+.text-field:empty {
+    -fx-alignment: center ;
+}
+.text-field:focused {
+    -fx-alignment: center-right ;
+}
